@@ -40,8 +40,52 @@ const developers = ""
 
 
 
+   
+
+      
+
+      
+
+      
 
 
+
+     
+
+
+
+
+
+
+
+
+
+
+client.on('message', prof => {
+    if(prof.content.endsWith(prefix + 'help')) {
+        var professor = new Discord.MessageEmbed()
+        .setAuthor(client.user.username, client.user.avatarURL)
+        .setThumbnail(client.user.avatarURL)
+        .setTitle('Code Help | and server support اوتاوا || OTTAWA')
+        .setURL('https://discord.gg/Cdeb9Jg')
+        .setDescription(`${prefix} help-1`)
+        .setFooter(`Requested By | ${prof.author.tag}`, prof.author.avatarURL);
+        prof.channel.send(professor);
+    }
+});
+client.on('message', prof => {
+    if(prof.author.bot) return;
+    if(!prof.content.startsWith(prefix)) return;
+     if(prof.content.startsWith(prefix + 'help-1'))
+     var professor = new Discord.MessageEmbed()
+     .setAuthor(client.user.username, client.user.avatarURL)
+     .setThumbnail(client.user.avatarURL)
+     .setTitle('Code Help | and server support اوتاوا || OTTAWA')
+     .setURL('https://discord.gg/Cdeb9Jg')
+     .setDescription(`اكتب الاوامر الي تعجبك`)
+     .setFooter(`Requested By | ${prof.author.tag}`, prof.author.avatarURL);
+     prof.author.send(professor);
+});
 
 
 
